@@ -1,0 +1,71 @@
+{
+  "function": "create_subscription",
+  "call_count": 1,
+  "arguments": {
+    "user": {
+      "id": "u-7421",
+      "contact": {
+        "email": "alice@example.com",
+        "address": {
+          "country": "DE",
+          "city": "Berlin"
+        }
+      }
+    },
+    "plan": "pro"
+  },
+  "schema_compliance": {
+    "user.id": {
+      "value": "u-7421",
+      "type": "string",
+      "minLength": 1,
+      "status": "✓ VALID"
+    },
+    "user.contact.email": {
+      "value": "alice@example.com",
+      "type": "string",
+      "format": "email",
+      "status": "✓ VALID"
+    },
+    "user.contact.address.country": {
+      "value": "DE",
+      "type": "string",
+      "minLength": 2,
+      "status": "✓ VALID"
+    },
+    "user.contact.address.city": {
+      "value": "Berlin",
+      "type": "string",
+      "minLength": 1,
+      "status": "✓ VALID"
+    },
+    "plan": {
+      "value": "pro",
+      "type": "string",
+      "enum": ["basic", "pro", "enterprise"],
+      "status": "✓ VALID"
+    },
+    "additionalProperties": "✓ false at all levels (no extra fields)"
+  },
+  "requirements_met": {
+    "requirement_1": {
+      "description": "Exactly one call to create_subscription",
+      "status": "✓ MET"
+    },
+    "requirement_2": {
+      "description": "Args match nested schema exactly",
+      "status": "✓ MET"
+    },
+    "requirement_3": {
+      "description": "Privacy scan produces zero hits",
+      "status": "✓ MET"
+    }
+  },
+  "failure_modes_avoided": {
+    "flattening_user_fields": "✓ NOT PRESENT - structure is nested",
+    "extra_fields": "✓ NOT PRESENT - additionalProperties validation passed",
+    "country_spelling": "✓ AVOIDED - used 'DE' code, not 'Germany'",
+    "invalid_plan_enum": "✓ AVOIDED - used 'pro' from valid enum",
+    "flattened_contact": "✓ AVOIDED - contact properly nested under user"
+  }
+}

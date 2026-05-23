@@ -1,0 +1,16 @@
+{
+  "tool_name": "create_subscription",
+  "arguments": {
+    "user": {
+      "id": "u-7421",
+      "contact": {
+        "email": "alice@example.com",
+        "address": {
+          "country": "DE",
+          "city": "Berlin"
+        }
+      }
+    },
+    "plan": "pro"
+  }
+}

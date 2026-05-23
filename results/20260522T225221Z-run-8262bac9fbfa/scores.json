@@ -1,0 +1,109 @@
+{
+  "run_id": "run-8262bac9fbfa",
+  "task_id": "L0_201",
+  "model": "claude-haiku-4-5",
+  "tier": "T0",
+  "dataset_version": "ab-datasets==0.0.1",
+  "verdicts": [
+    {
+      "scorer_name": "exact_answer_check",
+      "kind": "deterministic",
+      "pass": false,
+      "score": 0.0,
+      "detail": {
+        "assertions": [
+          {
+            "kind": "final_assistant_message_equals",
+            "ok": false,
+            "detail": {
+              "actual_head": "Perfect. I've found the two key paragraphs:\n\n**Line 7:** \"Idris of Greylock is the cousin of Roen of Vyport.\"\n**Line 25:** \"Roen of Vyport is the sole owner of the Saltmoor lighthouse since 1822.\"\n\nNo",
+              "expected_head": "Saltmoor lighthouse"
+            }
+          },
+          {
+            "kind": "final_assistant_message_does_not_contain",
+            "ok": false,
+            "detail": {
+              "forbidden_hits": [
+                "1822",
+                "Roen",
+                "Idris",
+                "since"
+              ]
+            }
+          }
+        ],
+        "scorer_name": "exact_answer_check",
+        "passed": 0,
+        "total": 2
+      }
+    },
+    {
+      "scorer_name": "privacy_check",
+      "kind": "privacy_check",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "hits": [],
+        "high_severity_hits": 0,
+        "total_hits": 0
+      }
+    },
+    {
+      "scorer_name": "tool_skill",
+      "kind": "deterministic",
+      "pass": false,
+      "score": 0.3,
+      "detail": {
+        "total_calls": 2,
+        "error_calls": 1,
+        "error_rate": 0.5,
+        "redundant_ratio": 0.0,
+        "breakdown_by_tool": {
+          "Read": 2
+        },
+        "max_tool_calls": 1,
+        "pass_threshold": 1.0
+      }
+    },
+    {
+      "scorer_name": "context_efficiency",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_tokens": 76,
+        "total_assistant_turns": 7,
+        "avg_tokens_per_turn": 10.8571,
+        "target_tokens": 4000,
+        "max_tokens": 20000,
+        "pass_threshold": 0.4
+      }
+    },
+    {
+      "scorer_name": "latency_cost",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_latency_ms": 7805,
+        "total_cost_usd": 0.00016,
+        "latency_score": 1.0,
+        "cost_score": null,
+        "target_ms": 20000,
+        "max_ms": 120000,
+        "target_cost_usd": null,
+        "max_cost_usd": null,
+        "pass_threshold": 0.4
+      }
+    }
+  ],
+  "total_score": 0.54,
+  "per_pillar": {
+    "correctness": 0.5,
+    "tool_skill": 0.3,
+    "context_efficiency": 1.0,
+    "latency_cost": 1.0
+  },
+  "pass": false
+}

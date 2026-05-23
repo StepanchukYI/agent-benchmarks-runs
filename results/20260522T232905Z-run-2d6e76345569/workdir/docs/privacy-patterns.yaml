@@ -1,0 +1,16 @@
+patterns:
+  - name: "API Key"
+    pattern: '(api[_-]?key|apikey)\s*[:=]\s*["\x27]?[a-zA-Z0-9]{20,}'
+    severity: "high"
+  - name: "AWS Access Key"
+    pattern: 'AKIA[0-9A-Z]{16}'
+    severity: "high"
+  - name: "Private Key"
+    pattern: '-----BEGIN (RSA|DSA|EC|PGP) PRIVATE KEY'
+    severity: "critical"
+  - name: "Password Field"
+    pattern: '(password|passwd|pwd)\s*[:=]\s*["\x27]'
+    severity: "high"
+  - name: "Bearer Token"
+    pattern: 'bearer\s+[a-zA-Z0-9._\-]+'
+    severity: "high"
