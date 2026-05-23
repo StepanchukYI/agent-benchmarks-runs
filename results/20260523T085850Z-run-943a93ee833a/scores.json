@@ -1,0 +1,129 @@
+{
+  "run_id": "run-943a93ee833a",
+  "task_id": "L0_308",
+  "model": "claude-opus-4-7",
+  "tier": "T0",
+  "dataset_version": "ab-datasets==0.0.1",
+  "verdicts": [
+    {
+      "scorer_name": "tool_call_validator",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "assertions": [
+          {
+            "kind": "tool_call_count",
+            "ok": true,
+            "detail": {
+              "tool": "set_priority",
+              "actual": 1,
+              "expected": 1
+            }
+          },
+          {
+            "kind": "tool_args_match_schema",
+            "ok": true,
+            "detail": {
+              "tool": "set_priority"
+            }
+          },
+          {
+            "kind": "tool_arg_equal",
+            "ok": true,
+            "detail": {
+              "tool": "set_priority",
+              "arg": "issue_id",
+              "actual": "JIRA-42",
+              "expected": "JIRA-42"
+            }
+          },
+          {
+            "kind": "tool_arg_in_set",
+            "ok": true,
+            "detail": {
+              "tool": "set_priority",
+              "arg": "priority",
+              "actual": "critical",
+              "allowed": [
+                "high",
+                "critical"
+              ]
+            }
+          }
+        ],
+        "scorer_name": "tool_call_validator",
+        "passed": 4,
+        "total": 4
+      }
+    },
+    {
+      "scorer_name": "privacy_check",
+      "kind": "privacy_check",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "hits": [],
+        "high_severity_hits": 0,
+        "total_hits": 0
+      }
+    },
+    {
+      "scorer_name": "tool_skill",
+      "kind": "deterministic",
+      "pass": false,
+      "score": 0.5,
+      "detail": {
+        "total_calls": 3,
+        "error_calls": 1,
+        "error_rate": 0.333333,
+        "redundant_ratio": 0.0,
+        "breakdown_by_tool": {
+          "ToolSearch": 2,
+          "set_priority": 1
+        },
+        "max_tool_calls": 3,
+        "pass_threshold": 0.6
+      }
+    },
+    {
+      "scorer_name": "context_efficiency",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_tokens": 216,
+        "total_assistant_turns": 8,
+        "avg_tokens_per_turn": 27.0,
+        "target_tokens": 1000,
+        "max_tokens": 8000,
+        "pass_threshold": 0.4
+      }
+    },
+    {
+      "scorer_name": "latency_cost",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 0.84975,
+      "detail": {
+        "total_latency_ms": 19212,
+        "total_cost_usd": 0.00488,
+        "latency_score": 0.84975,
+        "cost_score": null,
+        "target_ms": 12000,
+        "max_ms": 60000,
+        "target_cost_usd": null,
+        "max_cost_usd": null,
+        "pass_threshold": 0.5
+      }
+    }
+  ],
+  "total_score": 0.9549875000000001,
+  "per_pillar": {
+    "tool_skill": 0.75,
+    "correctness": 1.0,
+    "context_efficiency": 1.0,
+    "latency_cost": 0.84975
+  },
+  "pass": false
+}
