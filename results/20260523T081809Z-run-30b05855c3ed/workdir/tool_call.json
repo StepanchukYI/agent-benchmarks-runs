@@ -1,0 +1,7 @@
+{
+  "tool": "set_priority",
+  "arguments": {
+    "issue_id": "JIRA-42",
+    "priority": "critical"
+  }
+}

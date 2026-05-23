@@ -1,0 +1,89 @@
+{
+  "run_id": "run-6feb537ecf7e",
+  "task_id": "L0_006",
+  "model": "claude-sonnet-4-6",
+  "tier": "T0",
+  "dataset_version": "ab-datasets==0.0.1",
+  "verdicts": [
+    {
+      "scorer_name": "file_diff",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "matched": 1,
+        "total": 1,
+        "differing": []
+      }
+    },
+    {
+      "scorer_name": "privacy_check",
+      "kind": "privacy_check",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "hits": [],
+        "high_severity_hits": 0,
+        "total_hits": 0
+      }
+    },
+    {
+      "scorer_name": "tool_skill",
+      "kind": "deterministic",
+      "pass": false,
+      "score": 0.3,
+      "detail": {
+        "total_calls": 6,
+        "error_calls": 2,
+        "error_rate": 0.333333,
+        "redundant_ratio": 0.0,
+        "breakdown_by_tool": {
+          "Read": 3,
+          "Glob": 1,
+          "Bash": 2
+        },
+        "max_tool_calls": 5,
+        "pass_threshold": 0.5
+      }
+    },
+    {
+      "scorer_name": "context_efficiency",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_tokens": 252,
+        "total_assistant_turns": 9,
+        "avg_tokens_per_turn": 28.0,
+        "target_tokens": 1500,
+        "max_tokens": 8000,
+        "pass_threshold": 0.4
+      }
+    },
+    {
+      "scorer_name": "latency_cost",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 0.7844933333333333,
+      "detail": {
+        "total_latency_ms": 31163,
+        "total_cost_usd": 0.003648,
+        "latency_score": 0.784493,
+        "cost_score": null,
+        "target_ms": 15000,
+        "max_ms": 90000,
+        "target_cost_usd": null,
+        "max_cost_usd": null,
+        "pass_threshold": 0.4
+      }
+    }
+  ],
+  "total_score": 0.8842246666666668,
+  "per_pillar": {
+    "correctness": 1.0,
+    "tool_skill": 0.3,
+    "context_efficiency": 1.0,
+    "latency_cost": 0.7844933333333333
+  },
+  "pass": false
+}

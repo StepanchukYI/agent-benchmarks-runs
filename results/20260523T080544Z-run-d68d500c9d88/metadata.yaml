@@ -1,0 +1,12 @@
+run_id: run-d68d500c9d88
+task_id: L0_002
+model: claude-sonnet-4-6
+tier: T0
+tier_hash: d07d4bc3f79961a7ac266196b2986a3ee14d7291992ea3ceda1ce417b1f3bfcf
+dataset_version: ab-datasets==0.0.1
+harness: claude-code-cli@2.1.141
+started_at: '2026-05-23T08:05:44.665613+00:00'
+finished_at: '2026-05-23T08:06:00.360181+00:00'
+status: completed
+prompt_template_hash: null
+prompt_label: karpathy
