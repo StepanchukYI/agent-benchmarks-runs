@@ -1,0 +1,12 @@
+run_id: run-9dce30588203
+task_id: L0_701
+model: MiniMax-M2.7
+tier: T0
+tier_hash: d07d4bc3f79961a7ac266196b2986a3ee14d7291992ea3ceda1ce417b1f3bfcf
+dataset_version: ab-datasets==0.0.1
+harness: claude-code-cli@2.1.141
+started_at: '2026-05-23T02:29:46.345452+00:00'
+finished_at: '2026-05-23T02:29:52.893612+00:00'
+status: completed
+prompt_template_hash: null
+prompt_label: karpathy

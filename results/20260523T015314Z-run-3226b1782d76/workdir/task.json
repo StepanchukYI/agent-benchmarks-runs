@@ -1,0 +1,18 @@
+{
+  "id": "factual-tier-canary",
+  "name": "Factual Tier Canary",
+  "description": "Probe whether changing tier affects factual output. The chemical symbol for gold must be 'Au' regardless of operator config.",
+  "prompt": "What is the chemical symbol for gold? Output ONLY the symbol — one or two letters, no prose, no punctuation.",
+  "expected_answer": "Au",
+  "also_run_on": ["T1", "T2", "T3"],
+  "validation": {
+    "exact_match": true,
+    "case_sensitive": true,
+    "allow_whitespace_only": false
+  },
+  "acceptance_criteria": {
+    "final_message_equals": "Au",
+    "zero_tool_calls": true,
+    "privacy_scan_hits": 0
+  }
+}

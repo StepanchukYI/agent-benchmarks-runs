@@ -1,0 +1,6 @@
+{
+  "tier": "T1",
+  "model": "claude-sonnet-4-20250514",
+  "max_tokens": 100,
+  "temperature": 0.1
+}
