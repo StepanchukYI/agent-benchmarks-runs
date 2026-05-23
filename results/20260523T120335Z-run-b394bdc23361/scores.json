@@ -1,0 +1,123 @@
+{
+  "run_id": "run-b394bdc23361",
+  "task_id": "L0_310",
+  "model": "claude-opus-4-7",
+  "tier": "T0",
+  "dataset_version": "ab-datasets==0.0.1",
+  "verdicts": [
+    {
+      "scorer_name": "state_tracking_validator",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "assertions": [
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/ticket.json",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 47,
+              "len_expected": 47
+            }
+          },
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/comment.json",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 54,
+              "len_expected": 54
+            }
+          },
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/close.json",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 40,
+              "len_expected": 40
+            }
+          }
+        ],
+        "scorer_name": "state_tracking_validator",
+        "passed": 3,
+        "total": 3
+      }
+    },
+    {
+      "scorer_name": "privacy_check",
+      "kind": "privacy_check",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "hits": [],
+        "high_severity_hits": 0,
+        "total_hits": 0
+      }
+    },
+    {
+      "scorer_name": "tool_skill",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_calls": 12,
+        "error_calls": 1,
+        "error_rate": 0.083333,
+        "redundant_ratio": 0.0,
+        "breakdown_by_tool": {
+          "Bash": 6,
+          "Write": 6
+        },
+        "max_tool_calls": 12,
+        "pass_threshold": 0.5
+      }
+    },
+    {
+      "scorer_name": "context_efficiency",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_tokens": 1080,
+        "total_assistant_turns": 18,
+        "avg_tokens_per_turn": 60.0,
+        "target_tokens": 2500,
+        "max_tokens": 12000,
+        "pass_threshold": 0.4
+      }
+    },
+    {
+      "scorer_name": "latency_cost",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 0.7358480000000001,
+      "detail": {
+        "total_latency_ms": 58019,
+        "total_cost_usd": 0.02648,
+        "latency_score": 0.735848,
+        "cost_score": null,
+        "target_ms": 25000,
+        "max_ms": 150000,
+        "target_cost_usd": null,
+        "max_cost_usd": null,
+        "pass_threshold": 0.4
+      }
+    }
+  ],
+  "total_score": 0.9867923999999999,
+  "per_pillar": {
+    "tool_skill": 1.0,
+    "correctness": 1.0,
+    "context_efficiency": 1.0,
+    "latency_cost": 0.7358480000000001
+  },
+  "pass": true
+}

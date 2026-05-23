@@ -1,0 +1,7 @@
+{
+  "event_type": "user_signup",
+  "payload": {
+    "email": "alice@example.com",
+    "country": "DE"
+  }
+}

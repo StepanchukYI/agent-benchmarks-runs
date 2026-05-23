@@ -1,0 +1,12 @@
+run_id: run-ad2652614940
+task_id: L0_302
+model: claude-opus-4-7
+tier: T0
+tier_hash: 597a96271a514cd836d23debc1b6cbe8945152dd7be32ee35d65ab03e8dda5d3
+dataset_version: ab-datasets==0.0.1
+harness: claude-code-cli@2.1.141
+started_at: '2026-05-23T12:12:32.019435+00:00'
+finished_at: '2026-05-23T12:12:37.281261+00:00'
+status: completed
+prompt_template_hash: null
+prompt_label: operator-rules

@@ -1,0 +1,12 @@
+run_id: run-e8c7ed1fde92
+task_id: L0_305
+model: MiniMax-M2.7
+tier: T0
+tier_hash: eb42d814f5f448b33f397bc908f120522ebe23540541126da89ab4dc7f36e8b2
+dataset_version: ab-datasets==0.0.1
+harness: claude-code-cli@2.1.141
+started_at: '2026-05-23T11:57:59.109866+00:00'
+finished_at: '2026-05-23T11:58:18.164391+00:00'
+status: completed
+prompt_template_hash: null
+prompt_label: null
