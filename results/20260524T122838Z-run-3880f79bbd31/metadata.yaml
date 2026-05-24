@@ -1,0 +1,12 @@
+run_id: run-3880f79bbd31
+task_id: L0_606
+model: claude-sonnet-4-6
+tier: T2
+tier_hash: 6fab629024046fd4c1587277d0bf91ff4f8089a1671894613058808640713fa4
+dataset_version: ab-datasets==0.0.1
+harness: claude-code-cli@2.1.141
+started_at: '2026-05-24T12:28:38.560545+00:00'
+finished_at: '2026-05-24T12:28:45.148894+00:00'
+status: completed
+prompt_template_hash: null
+prompt_label: null

@@ -1,32 +1,59 @@
 {
-  "run_id": "run-f1a675c78085",
-  "task_id": "L0_012",
+  "run_id": "run-3880f79bbd31",
+  "task_id": "L0_606",
   "model": "claude-sonnet-4-6",
-  "tier": "T0",
+  "tier": "T2",
   "dataset_version": "ab-datasets==0.0.1",
   "verdicts": [
     {
-      "scorer_name": "crlf_preserved_diff",
+      "scorer_name": "tool_dispatched_check",
       "kind": "deterministic",
       "pass": true,
       "score": 1.0,
       "detail": {
         "assertions": [
           {
-            "kind": "workdir_file_content_equals",
+            "kind": "tool_call_count",
             "ok": true,
             "detail": {
-              "path": "notes.txt",
-              "match": true,
-              "mode": "content_match_lf_normalized",
-              "len_actual": 39,
-              "len_expected": 43
+              "tool": "note_write",
+              "actual": 1,
+              "expected": 1
+            }
+          },
+          {
+            "kind": "tool_args_match_schema",
+            "ok": true,
+            "detail": {
+              "tool": "note_write"
+            }
+          },
+          {
+            "kind": "tool_arg_nonempty",
+            "ok": true,
+            "detail": {
+              "tool": "note_write",
+              "arg": "body",
+              "actual_type": "str"
+            }
+          },
+          {
+            "kind": "tool_arg_contains_any",
+            "ok": true,
+            "detail": {
+              "tool": "note_write",
+              "arg": "body",
+              "hits": [
+                "pnpm",
+                "npm"
+              ],
+              "total_terms": 2
             }
           }
         ],
-        "scorer_name": "crlf_preserved_diff",
-        "passed": 1,
-        "total": 1
+        "scorer_name": "tool_dispatched_check",
+        "passed": 4,
+        "total": 4
       }
     },
     {
@@ -46,12 +73,12 @@
       "pass": true,
       "score": 1.0,
       "detail": {
-        "total_calls": 2,
+        "total_calls": 1,
         "error_calls": 0,
         "error_rate": 0.0,
         "redundant_ratio": 0.0,
         "breakdown_by_tool": {
-          "Bash": 2
+          "mcp__ab-stub__note_write": 1
         },
         "max_tool_calls": 5,
         "pass_threshold": 0.6
@@ -63,12 +90,12 @@
       "pass": true,
       "score": 1.0,
       "detail": {
-        "total_tokens": 79,
-        "total_assistant_turns": 4,
-        "avg_tokens_per_turn": 19.75,
-        "target_tokens": 1500,
-        "max_tokens": 8000,
-        "pass_threshold": 0.5
+        "total_tokens": 9,
+        "total_assistant_turns": 2,
+        "avg_tokens_per_turn": 4.5,
+        "target_tokens": 2000,
+        "max_tokens": 10000,
+        "pass_threshold": 0.4
       }
     },
     {
@@ -77,22 +104,22 @@
       "pass": true,
       "score": 1.0,
       "detail": {
-        "total_latency_ms": 7164,
-        "total_cost_usd": 0.001113,
+        "total_latency_ms": 4195,
+        "total_cost_usd": 9.9e-05,
         "latency_score": 1.0,
         "cost_score": null,
         "target_ms": 15000,
         "max_ms": 90000,
         "target_cost_usd": null,
         "max_cost_usd": null,
-        "pass_threshold": 0.5
+        "pass_threshold": 0.4
       }
     }
   ],
-  "total_score": 1.0,
+  "total_score": 0.9500000000000001,
   "per_pillar": {
-    "correctness": 1.0,
     "tool_skill": 1.0,
+    "correctness": 1.0,
     "context_efficiency": 1.0,
     "latency_cost": 1.0
   },
