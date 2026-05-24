@@ -82,7 +82,7 @@
           "mcp__ab-stub__note_write": 1
         },
         "max_tool_calls": 5,
-        "pass_threshold": 0.6
+        "pass_threshold": 0.8
       }
     },
     {
@@ -95,8 +95,8 @@
         "total_assistant_turns": 4,
         "avg_tokens_per_turn": 8.75,
         "target_tokens": 2000,
-        "max_tokens": 10000,
-        "pass_threshold": 0.4
+        "max_tokens": 5000,
+        "pass_threshold": 0.6
       }
     },
     {
@@ -110,14 +110,14 @@
         "latency_score": 1.0,
         "cost_score": null,
         "target_ms": 15000,
-        "max_ms": 90000,
+        "max_ms": 45000,
         "target_cost_usd": null,
         "max_cost_usd": null,
-        "pass_threshold": 0.4
+        "pass_threshold": 0.6
       }
     }
   ],
-  "total_score": 0.9500000000000001,
+  "total_score": 0.8,
   "per_pillar": {
     "tool_skill": 1.0,
     "correctness": 1.0,
