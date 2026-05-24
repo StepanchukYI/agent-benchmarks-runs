@@ -8,23 +8,24 @@
     {
       "scorer_name": "crlf_preserved_diff",
       "kind": "deterministic",
-      "pass": false,
-      "score": 0.0,
+      "pass": true,
+      "score": 1.0,
       "detail": {
         "assertions": [
           {
             "kind": "workdir_file_content_equals",
-            "ok": false,
+            "ok": true,
             "detail": {
               "path": "notes.txt",
-              "match": false,
+              "match": true,
+              "mode": "content_match_lf_normalized",
               "len_actual": 39,
               "len_expected": 43
             }
           }
         ],
         "scorer_name": "crlf_preserved_diff",
-        "passed": 0,
+        "passed": 1,
         "total": 1
       }
     },
@@ -90,9 +91,9 @@
       }
     }
   ],
-  "total_score": 0.5802925641025641,
+  "total_score": 0.9552925641025641,
   "per_pillar": {
-    "correctness": 0.5,
+    "correctness": 1.0,
     "tool_skill": 1.0,
     "context_efficiency": 0.24738461538461542,
     "latency_cost": 0.8584666666666667
