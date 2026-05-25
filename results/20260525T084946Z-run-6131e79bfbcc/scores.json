@@ -1,0 +1,124 @@
+{
+  "run_id": "run-6131e79bfbcc",
+  "task_id": "L0_020",
+  "model": "claude-sonnet-4-6",
+  "tier": "T0",
+  "dataset_version": "ab-datasets==0.0.1",
+  "verdicts": [
+    {
+      "scorer_name": "three_step_pipeline_check",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "assertions": [
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/filtered.txt",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 282,
+              "len_expected": 282
+            }
+          },
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/deduped.txt",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 187,
+              "len_expected": 187
+            }
+          },
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/count.txt",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 1,
+              "len_expected": 1
+            }
+          }
+        ],
+        "scorer_name": "three_step_pipeline_check",
+        "passed": 3,
+        "total": 3,
+        "pass_threshold": 1.0
+      }
+    },
+    {
+      "scorer_name": "privacy_check",
+      "kind": "privacy_check",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "hits": [],
+        "high_severity_hits": 0,
+        "total_hits": 0
+      }
+    },
+    {
+      "scorer_name": "tool_skill",
+      "kind": "deterministic",
+      "pass": false,
+      "score": 0.5,
+      "detail": {
+        "total_calls": 6,
+        "error_calls": 2,
+        "error_rate": 0.333333,
+        "redundant_ratio": 0.0,
+        "breakdown_by_tool": {
+          "Bash": 4,
+          "Read": 2
+        },
+        "max_tool_calls": 8,
+        "pass_threshold": 0.8
+      }
+    },
+    {
+      "scorer_name": "context_efficiency",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_tokens": 344,
+        "total_assistant_turns": 8,
+        "avg_tokens_per_turn": 43.0,
+        "target_tokens": 2000,
+        "max_tokens": 6000,
+        "pass_threshold": 0.6
+      }
+    },
+    {
+      "scorer_name": "latency_cost",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_latency_ms": 21743,
+        "total_cost_usd": 0.00504,
+        "latency_score": 1.0,
+        "cost_score": null,
+        "target_ms": 25000,
+        "max_ms": 75000,
+        "target_cost_usd": null,
+        "max_cost_usd": null,
+        "pass_threshold": 0.6
+      }
+    }
+  ],
+  "total_score": 0.9249999999999999,
+  "per_pillar": {
+    "correctness": 1.0,
+    "tool_skill": 0.5,
+    "context_efficiency": 1.0,
+    "latency_cost": 1.0
+  },
+  "pass": false
+}
