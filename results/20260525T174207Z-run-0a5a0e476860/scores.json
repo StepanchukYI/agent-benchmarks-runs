@@ -1,0 +1,143 @@
+{
+  "run_id": "run-0a5a0e476860",
+  "task_id": "L0_311",
+  "model": "glm-4.6",
+  "tier": "T0",
+  "dataset_version": "ab-datasets==0.0.1",
+  "verdicts": [
+    {
+      "scorer_name": "per_slot_writes",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "assertions": [
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/slot_a.txt",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 5,
+              "len_expected": 5
+            }
+          },
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/slot_b.txt",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 4,
+              "len_expected": 4
+            }
+          },
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/slot_c.txt",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 5,
+              "len_expected": 5
+            }
+          },
+          {
+            "kind": "workdir_file_content_equals",
+            "ok": true,
+            "detail": {
+              "path": "out/slot_d.txt",
+              "match": true,
+              "mode": "exact",
+              "len_actual": 5,
+              "len_expected": 5
+            }
+          },
+          {
+            "kind": "workdir_file_absent",
+            "ok": true,
+            "detail": {
+              "path": "slot.txt",
+              "absent": true
+            }
+          }
+        ],
+        "scorer_name": "per_slot_writes",
+        "passed": 5,
+        "total": 5,
+        "pass_threshold": 1.0
+      }
+    },
+    {
+      "scorer_name": "privacy_check",
+      "kind": "privacy_check",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "hits": [],
+        "high_severity_hits": 0,
+        "total_hits": 0
+      }
+    },
+    {
+      "scorer_name": "tool_skill",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 0.8,
+      "detail": {
+        "total_calls": 12,
+        "error_calls": 1,
+        "error_rate": 0.083333,
+        "redundant_ratio": 0.0,
+        "breakdown_by_tool": {
+          "Read": 1,
+          "Bash": 11
+        },
+        "max_tool_calls": 10,
+        "pass_threshold": 0.8
+      }
+    },
+    {
+      "scorer_name": "context_efficiency",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_tokens": 0,
+        "total_assistant_turns": 29,
+        "avg_tokens_per_turn": 0.0,
+        "target_tokens": 2500,
+        "max_tokens": 7000,
+        "pass_threshold": 0.6
+      }
+    },
+    {
+      "scorer_name": "latency_cost",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 0.9873958333333334,
+      "detail": {
+        "total_latency_ms": 22605,
+        "total_cost_usd": 0.0,
+        "latency_score": 0.987396,
+        "cost_score": null,
+        "target_ms": 22000,
+        "max_ms": 70000,
+        "target_cost_usd": null,
+        "max_cost_usd": null,
+        "pass_threshold": 0.6
+      }
+    }
+  ],
+  "total_score": 0.9593697916666667,
+  "per_pillar": {
+    "correctness": 1.0,
+    "tool_skill": 0.8,
+    "context_efficiency": 1.0,
+    "latency_cost": 0.9873958333333334
+  },
+  "pass": true
+}

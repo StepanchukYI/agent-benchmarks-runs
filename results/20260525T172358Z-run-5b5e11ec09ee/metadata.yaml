@@ -1,0 +1,12 @@
+run_id: run-5b5e11ec09ee
+task_id: L0_002
+model: glm-4.6
+tier: T0
+tier_hash: eb42d814f5f448b33f397bc908f120522ebe23540541126da89ab4dc7f36e8b2
+dataset_version: ab-datasets==0.0.1
+harness: claude-code-cli@2.1.141
+started_at: '2026-05-25T17:23:58.921587+00:00'
+finished_at: '2026-05-25T17:25:11.407896+00:00'
+status: completed
+prompt_template_hash: null
+prompt_label: null
