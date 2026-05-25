@@ -1,0 +1,12 @@
+run_id: run-d59df2eb2f99
+task_id: L0_403
+model: claude-opus-4-7
+tier: T0
+tier_hash: eb42d814f5f448b33f397bc908f120522ebe23540541126da89ab4dc7f36e8b2
+dataset_version: ab-datasets==0.0.1
+harness: claude-code-cli@2.1.141
+started_at: '2026-05-24T21:54:11.465757+00:00'
+finished_at: '2026-05-24T21:54:19.724914+00:00'
+status: completed
+prompt_template_hash: null
+prompt_label: null
