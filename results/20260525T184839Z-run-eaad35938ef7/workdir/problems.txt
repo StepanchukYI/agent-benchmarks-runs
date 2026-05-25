@@ -1,0 +1,61 @@
+Problem 1 — Anchor: Adis is a TRUTH-TELLER.
+    Adis says: "Berek lies."
+    Berek says: "Cira tells the truth."
+    Cira says: "Dax lies."
+    
+Analysis:
+- Adis = T
+- Adis (T) says "Berek lies" → statement true → Berek = L
+- Berek (L) says "Cira tells truth" → statement false → Cira ≠ T → Cira = L
+- Cira (L) says "Dax lies" → statement false → Dax ≠ L → Dax = T
+Answer: Dax = T
+
+Problem 2 — Anchor: Eke is a LIAR.
+    Eke says: "Fenn lies."
+    Fenn says: "Garra lies."
+    
+Analysis:
+- Eke = L
+- Eke (L) says "Fenn lies" → statement false → Fenn ≠ L → Fenn = T
+- Fenn (T) says "Garra lies" → statement true → Garra = L
+Answer: Garra = L
+
+Problem 3 — Anchor: Hala is a TRUTH-TELLER.
+    Hala says: "Iro tells the truth."
+    Iro says: "Jora lies."
+    Jora says: "Kira tells the truth."
+    Kira says: "Lex lies."
+    
+Analysis:
+- Hala = T
+- Hala (T) says "Iro tells truth" → Iro = T
+- Iro (T) says "Jora lies" → Jora = L
+- Jora (L) says "Kira tells truth" → statement false → Kira ≠ T → Kira = L
+- Kira (L) says "Lex lies" → statement false → Lex ≠ L → Lex = T
+Answer: Lex = T
+
+Problem 4 — Anchor: Mor is a LIAR.
+    Mor says: "Nor tells the truth."
+    Nor says: "Oro tells the truth."
+    
+Analysis:
+- Mor = L
+- Mor (L) says "Nor tells truth" → statement false → Nor ≠ T → Nor = L
+- Nor (L) says "Oro tells truth" → statement false → Oro ≠ T → Oro = L
+Answer: Oro = L
+
+Problem 5 — Anchor: Pir is a TRUTH-TELLER.
+    Pir says: "Qua lies."
+    Qua says: "Rho tells the truth."
+    Rho says: "Sef lies."
+    Sef says: "Tev lies."
+    
+Analysis:
+- Pir = T
+- Pir (T) says "Qua lies" → Qua = L
+- Qua (L) says "Rho tells truth" → statement false → Rho ≠ T → Rho = L
+- Rho (L) says "Sef lies" → statement false → Sef ≠ L → Sef = T
+- Sef (T) says "Tev lies" → Tev = L
+Answer: Tev = L
+
+Chain: T + L + T + L + L = TLTLL

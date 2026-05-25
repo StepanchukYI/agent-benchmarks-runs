@@ -1,0 +1,21 @@
+Problem 1: Adis=T → "Berek lies" → Berek=L
+           Berek=L → "Cira tells truth" → false → Cira=L  
+           Cira=L → "Dax lies" → false → Dax=T
+
+Problem 2: Eke=L → "Fenn lies" → false → Fenn=T
+           Fenn=T → "Garra lies" → Garra=L
+
+Problem 3: Hala=T → "Iro tells truth" → Iro=T
+           Iro=T → "Jora lies" → Jora=L
+           Jora=L → "Kira tells truth" → false → Kira=L
+           Kira=L → "Lex lies" → false → Lex=T
+
+Problem 4: Mor=L → "Nor tells truth" → false → Nor=L
+           Nor=L → "Oro tells truth" → false → Oro=L
+
+Problem 5: Pir=T → "Qua lies" → Qua=L
+           Qua=L → "Rho tells truth" → false → Rho=L
+           Rho=L → "Sef lies" → false → Sef=T
+           Sef=T → "Tev lies" → Tev=L
+
+Chain: T L T L L

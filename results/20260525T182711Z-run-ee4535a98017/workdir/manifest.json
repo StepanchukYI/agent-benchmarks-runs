@@ -1,0 +1,8 @@
+{
+  "release": "v2.4.0",
+  "components": [
+    {"name": "catalog", "version": "1.0.2"},
+    {"name": "fetcher", "version": "0.3.7"},
+    {"name": "leaderboard", "version": "2.4.0"}
+  ]
+}
