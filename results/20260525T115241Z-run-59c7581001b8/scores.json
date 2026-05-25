@@ -1,0 +1,88 @@
+{
+  "run_id": "run-59c7581001b8",
+  "task_id": "L0_309",
+  "model": "claude-haiku-4-5",
+  "tier": "T0",
+  "dataset_version": "ab-datasets==0.0.1",
+  "verdicts": [
+    {
+      "scorer_name": "file_diff",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "matched": 1,
+        "total": 1,
+        "differing": []
+      }
+    },
+    {
+      "scorer_name": "privacy_check",
+      "kind": "privacy_check",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "hits": [],
+        "high_severity_hits": 0,
+        "total_hits": 0
+      }
+    },
+    {
+      "scorer_name": "tool_skill",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_calls": 4,
+        "error_calls": 1,
+        "error_rate": 0.25,
+        "redundant_ratio": 0.0,
+        "breakdown_by_tool": {
+          "Bash": 3,
+          "Write": 1
+        },
+        "max_tool_calls": 4,
+        "pass_threshold": 0.8
+      }
+    },
+    {
+      "scorer_name": "context_efficiency",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_tokens": 121,
+        "total_assistant_turns": 11,
+        "avg_tokens_per_turn": 11.0,
+        "target_tokens": 2000,
+        "max_tokens": 5000,
+        "pass_threshold": 0.6
+      }
+    },
+    {
+      "scorer_name": "latency_cost",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 0.9672380952380952,
+      "detail": {
+        "total_latency_ms": 19376,
+        "total_cost_usd": 0.000273,
+        "latency_score": 0.967238,
+        "cost_score": null,
+        "target_ms": 18000,
+        "max_ms": 60000,
+        "target_cost_usd": null,
+        "max_cost_usd": null,
+        "pass_threshold": 0.6
+      }
+    }
+  ],
+  "total_score": 0.9983619047619048,
+  "per_pillar": {
+    "correctness": 1.0,
+    "tool_skill": 1.0,
+    "context_efficiency": 1.0,
+    "latency_cost": 0.9672380952380952
+  },
+  "pass": true
+}

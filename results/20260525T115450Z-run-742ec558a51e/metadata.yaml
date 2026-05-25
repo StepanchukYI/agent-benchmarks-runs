@@ -1,0 +1,12 @@
+run_id: run-742ec558a51e
+task_id: L0_315
+model: claude-haiku-4-5
+tier: T0
+tier_hash: eb42d814f5f448b33f397bc908f120522ebe23540541126da89ab4dc7f36e8b2
+dataset_version: ab-datasets==0.0.1
+harness: claude-code-cli@2.1.141
+started_at: '2026-05-25T11:54:50.213314+00:00'
+finished_at: '2026-05-25T11:55:21.637137+00:00'
+status: completed
+prompt_template_hash: null
+prompt_label: null
