@@ -1,4 +1,0 @@
-line one
-line TWO
-line three
-line four

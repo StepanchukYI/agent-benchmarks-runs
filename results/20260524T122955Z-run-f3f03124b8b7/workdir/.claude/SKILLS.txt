@@ -1,2 +1,0 @@
-memory:memory-session
-memory:memory-write

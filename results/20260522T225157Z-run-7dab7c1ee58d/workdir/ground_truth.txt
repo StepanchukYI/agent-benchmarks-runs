@@ -1,5 +1,0 @@
-raven	120
-amber	95
-Saltmoor	82
-lantern	70
-Idris	58

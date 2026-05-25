@@ -1,8 +1,0 @@
-{
-  "tool": "set_priority",
-  "arguments": {
-    "issue_id": "JIRA-42",
-    "priority": "critical"
-  },
-  "reasoning": "'urgent' is not in the enum {low, medium, high, critical}. It maps to 'critical' — the highest severity tier, matching the urgency implied by the user's word."
-}
