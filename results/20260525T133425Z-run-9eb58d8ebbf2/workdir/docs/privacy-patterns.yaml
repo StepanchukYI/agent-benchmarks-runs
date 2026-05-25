@@ -1,0 +1,77 @@
+# Patterns also drive the auto-scrub engine (ab_sdk.scrub). A pattern with
+# scrub_replacement set is auto-fixable: the scrubber rewrites matches in
+# place. Patterns without scrub_replacement stay detect-only — auto-fix is
+# refused (use case: tokens. Replacing a leaked token with [REDACTED] hides
+# evidence; the only real fix is to ROTATE the secret).
+patterns:
+  - id: email-real
+    description: "Real email address outside @example.com / @(users.)noreply.github.com / git@github.com ssh url"
+    regex: "(?i)\\b(?!git@github\\.com\\b)[a-z0-9._%+-]+@(?!example\\.com\\b)(?!(?:users\\.)?noreply\\.github\\.com\\b)(?!ab-isolation\\.invalid\\b)[a-z0-9.-]+\\.[a-z]{2,}\\b"
+    severity: medium
+    scrub_replacement: "scrubbed@example.com"
+    exclude_paths:
+      - "pnpm-lock.yaml"
+      - "uv.lock"
+      - "package-lock.json"
+
+  - id: operator-home-path
+    description: "Operator home directory path leak (macOS or Linux). Catches /Users/<any> and /home/<any> except scrub sentinels. The literal operator handle is NEVER baked into this pattern — that would defeat the privacy boundary by storing the very value it's meant to detect."
+    regex: "(?:/Users/(?!scrubbed\\b|Shared\\b)[A-Za-z0-9._-]+|/home/(?!scrubbed\\b)[a-z0-9._-]+)(?=/|\\b)"
+    severity: high
+    scrub_replacement: "/home/scrubbed"
+    # These files INTENTIONALLY contain example home paths (test fixtures
+    # for the scrubber, isolation pattern docs in source comments). Real
+    # leaks land in user-published trajectories, NOT in repo source.
+    exclude_paths:
+      - "pnpm-lock.yaml"
+      - "uv.lock"
+      - "package-lock.json"
+      - "/tests/"
+      - "ab_harness/runners/_isolation.py"
+      - "ab_harness/runners/claude_code.py"
+
+  - id: isolation-honeypot-email
+    description: "Honeypot sentinel set by ab-harness IsolatedEnv as EMAIL. If this lands in a trajectory, isolation broke: the agent saw the operator's environment and echoed our planted value back. DETECT-ONLY — do NOT scrub; the hit is the signal."
+    regex: "AB_LEAK_DETECTOR_DO_NOT_USE@ab-isolation\\.invalid"
+    severity: high
+    # The literal lives in source by design — that's where IsolatedEnv
+    # injects it. Hits should fire only in trajectory artifacts.
+    exclude_paths:
+      - "ab_harness/runners/claude_code.py"
+      - "docs/privacy-patterns.yaml"
+
+  - id: aws-access-key-id
+    description: "AWS access key id (DETECT-ONLY — rotate, don't redact)"
+    regex: "AKIA[0-9A-Z]{16}"
+    severity: high
+
+  - id: slack-token
+    description: "Slack bearer token (DETECT-ONLY — rotate, don't redact)"
+    regex: "xox[abposr]-[A-Za-z0-9-]+"
+    severity: high
+
+  - id: github-token
+    description: "GitHub personal access token (DETECT-ONLY — rotate, don't redact)"
+    regex: "ghp_[A-Za-z0-9]{36}"
+    severity: high
+
+  - id: openai-api-key
+    description: "OpenAI-style secret key (DETECT-ONLY — rotate, don't redact)"
+    regex: "sk-[A-Za-z0-9]{32,}"
+    severity: high
+
+  - id: private-key-header
+    description: "PEM private key header (DETECT-ONLY — regenerate the key)"
+    regex: "-----BEGIN [A-Z ]+PRIVATE KEY-----"
+    severity: high
+
+  - id: vault-hub-marker
+    description: "vault hub leakage marker outside .claude/ and L3 obsidian tasks"
+    regex: "vault_hub:\\s"
+    severity: medium
+    scrub_replacement: "vault_hub_scrubbed: "
+    exclude_paths:
+      - ".claude/"
+      - "CLAUDE.md"
+      - "L3_domains/obsidian/"
+      - "docs/privacy-patterns"
