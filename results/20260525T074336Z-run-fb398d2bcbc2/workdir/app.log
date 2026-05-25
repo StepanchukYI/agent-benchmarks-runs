@@ -1,8 +1,0 @@
-2026-04-12T08:13:01Z INFO  http req_id=r-9a1 path=/health   status=200 latency_ms=4
-2026-04-12T08:13:02Z INFO  http req_id=r-9a2 path=/login    status=200 latency_ms=88
-2026-04-12T08:13:03Z WARN  http req_id=r-9a3 path=/cart     status=429 latency_ms=12
-2026-04-12T08:13:04Z INFO  http req_id=r-9a4 path=/health   status=200 latency_ms=3
-2026-04-12T08:13:05Z ERROR http req_id=r-9a5 path=/payment  status=503 latency_ms=2104
-2026-04-12T08:13:06Z INFO  http req_id=r-9a6 path=/login    status=200 latency_ms=91
-2026-04-12T08:13:07Z ERROR http req_id=r-9a7 path=/checkout status=500 latency_ms=872
-2026-04-12T08:13:08Z INFO  http req_id=r-9a8 path=/health   status=200 latency_ms=5
