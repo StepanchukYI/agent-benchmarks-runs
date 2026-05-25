@@ -1,0 +1,105 @@
+{
+  "run_id": "run-82b238398bc1",
+  "task_id": "L0_705",
+  "model": "claude-haiku-4-5",
+  "tier": "T0",
+  "dataset_version": "ab-datasets==0.0.1",
+  "verdicts": [
+    {
+      "scorer_name": "navigation_chain_sha1",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "assertions": [
+          {
+            "kind": "final_assistant_message_equals",
+            "ok": true,
+            "detail": {
+              "actual_head": "662f98669d2bd2b82f416af2e26fcaa0c772c142",
+              "expected_head": "662f98669d2bd2b82f416af2e26fcaa0c772c142"
+            }
+          },
+          {
+            "kind": "final_assistant_message_does_not_contain",
+            "ok": true,
+            "detail": {
+              "forbidden_hits": []
+            }
+          }
+        ],
+        "scorer_name": "navigation_chain_sha1",
+        "passed": 2,
+        "total": 2,
+        "pass_threshold": 1.0
+      }
+    },
+    {
+      "scorer_name": "privacy_check",
+      "kind": "privacy_check",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "hits": [],
+        "high_severity_hits": 0,
+        "total_hits": 0
+      }
+    },
+    {
+      "scorer_name": "tool_skill",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_calls": 1,
+        "error_calls": 0,
+        "error_rate": 0.0,
+        "redundant_ratio": 0.0,
+        "breakdown_by_tool": {
+          "Bash": 1
+        },
+        "max_tool_calls": 8,
+        "pass_threshold": 0.8
+      }
+    },
+    {
+      "scorer_name": "context_efficiency",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_tokens": 52,
+        "total_assistant_turns": 5,
+        "avg_tokens_per_turn": 10.4,
+        "target_tokens": 2500,
+        "max_tokens": 7000,
+        "pass_threshold": 0.6
+      }
+    },
+    {
+      "scorer_name": "latency_cost",
+      "kind": "deterministic",
+      "pass": true,
+      "score": 1.0,
+      "detail": {
+        "total_latency_ms": 13072,
+        "total_cost_usd": 9.6e-05,
+        "latency_score": 1.0,
+        "cost_score": null,
+        "target_ms": 20000,
+        "max_ms": 65000,
+        "target_cost_usd": null,
+        "max_cost_usd": null,
+        "pass_threshold": 0.6
+      }
+    }
+  ],
+  "total_score": 1.0,
+  "per_pillar": {
+    "correctness": 1.0,
+    "tool_skill": 1.0,
+    "context_efficiency": 1.0,
+    "latency_cost": 1.0
+  },
+  "pass": true
+}
