@@ -1,0 +1,13 @@
+STATUS: alpha-build OK
+STATUS: beta-build OK
+STATUS: alpha-build OK
+STATUS: gamma-build FAIL
+STATUS: delta-build OK
+STATUS: beta-build OK
+STATUS: epsilon-build SKIP
+STATUS: zeta-build OK
+STATUS: alpha-build OK
+STATUS: omicron-build OK
+STATUS: pi-build OK
+STATUS: epsilon-build SKIP
+
